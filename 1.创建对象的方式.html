@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    console.log("第1种创建对象的方式: {}")
+    var a={"anjun":"安俊","yishuixing":"易水行"}
+    console.log(a)
+
+    console.log("第2种创建对象的方式:new Object")
+    var b=new Object()
+    b.name="安俊"
+    b.nickname="易水行"
+    b.run=function () {
+        console.log("this b run")
+    }
+    console.log(b)
+    b.run()
+
+    console.log("第3种创建对象的方式: 用function 自定义构造函数")
+    function person (name,ninkname) {
+        this.name=name
+        this.nickname=ninkname
+        this.run=function () {
+            console.log(this.name+'--'+this.nickname)
+        }
+    }
+   var d= new person("安俊","易水行")
+    console.log(d)
+    if (d instanceof person) {
+        console.log( 'type c')
+    }
+    d.run();
+
+</script>
+<body>
+
+</body>
+</html>
